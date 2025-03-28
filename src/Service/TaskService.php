@@ -12,14 +12,21 @@ class TaskService
     {
     }
 
-    public function addTask(Task $task): void
+    public function addTask(Task $task): bool
     {
 
+        if ($task->getCreatedAt() > $task->getExpiredAt()) {
+            return false;
+        }
 
+        $this->em->persist($task);
+        $this->em->flush();
+
+        return true;
     }
 
-    public function getTasks(): Task
+    public function getTasks(): array
     {
-
+        return $this->taskRepository->findAll();
     }
 }
