@@ -16,7 +16,7 @@ class Task
     private ?int $id = null;
 
     #[Assert\NotBlank(message: "Le titre ne peut être vide")]
-    #[Assert\Length(min(3), message: "Le titre doit faire plus de 2 caractères")]
+    #[Assert\Length(min: 3, message: "Le titre doit faire plus de 2 caractères")]
     #[ORM\Column(length: 50)]
     private ?string $title = null;
 
