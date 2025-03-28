@@ -16,11 +16,6 @@ class TaskService
     public function addTask(Task $task): void
     {
 
-        $this->em->persist($task);
-        $this->em->flush();
-
-
-
 
     }
 
