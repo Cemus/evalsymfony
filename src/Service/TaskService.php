@@ -3,7 +3,6 @@
 namespace App\Service;
 
 use App\Entity\Task;
-use App\Form\TaskType;
 use App\Repository\TaskRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
